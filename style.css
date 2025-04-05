@@ -1,50 +1,88 @@
 /* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
     background: url('images/AMWosh_Cover_Photo.jpg') no-repeat center center fixed;
-    text-align: center;
     background-size: cover;
     background-position: top center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header */
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 header {
-    background: linear-gradient(to right, #ff66b2, #ff99cc); /* Gradient pink */
-    color: white;
-    padding: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8d7da; /* Light pink */
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: space-between; /* Space between logo and nav links */
+    padding: 10px 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Navigation */
-nav ul {
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center; /* Center align items vertically */
+    width: 90%;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-links {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Center align items vertically */
 }
 
-nav ul li {
+.nav-links li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white;
+.nav-links a {
     text-decoration: none;
-    font-size: 18px;
+    color: #0d3b1e;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 10px 15px;
 }
 
-nav ul li a:hover {
-    color: #ffccff; /* Light pink hover effect */
+/* Sustain Button */
+.sustain-btn {
+    background: #f080c5;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
 /* Main Content */
 main {
+    flex: 1; /* Allow main to grow and fill the available space */
     padding: 20px;
 }
 
@@ -64,15 +102,40 @@ main {
     font-size: 24px;
 }
 
-.card p {
-    color: #333;
-    font-size: 16px;
+.footer {
+    background-color: #f8d7da; /* Light pink */
+    padding: 15px 0;
+    text-align: center;
 }
 
-/* Footer */
-footer {
-    background-color: #ff66b2;
-    color: white;
-    padding: 10px;
-    margin-top: 30px;
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between icons and text */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center; /* Aligns icons properly */
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #444; /* Dark gray */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d63384; /* Pinkish hover effect */
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Aligns text with icons */
 }
