@@ -10,54 +10,80 @@ html, body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; /* Add vertical scrollbar if needed */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 
+/* Header */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f8d7da; /* Light pink */
+    background-color: #f8d7da;
     display: flex;
-    align-items: center; /* Center align items vertically */
-    justify-content: space-between; /* Space between logo and nav links */
-    padding: 10px 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space between logo and nav links */
-    align-items: center; /* Center align items vertically */
-    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .logo img {
-    height: 50px; /* Adjust as needed */
-    vertical-align: middle;
+    height: 50px;
+    vertical-align: left;
     border-radius: 50%;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: black; /* Make it black */
+    border-radius: 5px;
+}
 /* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    align-items: center; /* Center align items vertically */
+    align-items: center;
 }
 
 .nav-links li {
@@ -74,16 +100,24 @@ header {
 
 /* Sustain Button */
 .sustain-btn {
-    background: #f080c5;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
+    background: none; 
+    color: #0d3b1e; /* Keeps the text color */
+    padding: 8px 20px;
+    /* border: 2px solid #0d3b1e; Add a border around the button */
+    /* border-radius: 5px; */
+    margin-right: 20px; /* Space the button from the right side */
 }
+
 
 /* Main Content */
 main {
-    flex: 1; /* Allow main to grow and fill the available space */
+    flex-grow: 1;
     padding: 20px;
+    width: 100%;
+    margin-top: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Princess Card Design */
@@ -102,34 +136,41 @@ main {
     font-size: 24px;
 }
 
+/* Footer */
 .footer {
-    background-color: #f8d7da; /* Light pink */
+    background-color: #f8d7da;
     padding: 15px 0;
     text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Space between icons and text */
-    flex-wrap: wrap; /* Ensures responsiveness */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .social-icons {
     display: flex;
     gap: 15px;
-    align-items: center; /* Aligns icons properly */
+    align-items: center;
 }
 
 .social-icons a {
     font-size: 24px;
-    color: #444; /* Dark gray */
+    color: #444;
     transition: color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #d63384; /* Pinkish hover effect */
+    color: #d63384;
 }
 
 .footer-content p {
@@ -137,5 +178,83 @@ main {
     color: #333;
     margin: 0;
     display: flex;
-    align-items: center; /* Aligns text with icons */
+    align-items: center;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%; /* Place it below the header */
+        left: 50%;
+        width: 200px; /* Give it a width */
+        background: white;
+        padding: 10px;
+        display: none;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .logo img {
+        height: 40px;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .sustain-btn {
+        margin-right: 10px;
+        width: 100%;
+        text-align: left;
+        padding-left: 15px;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }

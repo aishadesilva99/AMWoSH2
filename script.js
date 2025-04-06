@@ -1,1 +1,5 @@
-console.log("Welcome to Alliance of Muslim Women in Spirituality and Humanity!");
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active'); // Toggles the 'active' class
+    
+}
