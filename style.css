@@ -4,8 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: url('images/AMWosh_Cover_Photo.jpg') no-repeat center center fixed;
-    background-size: cover;
+    
     background-position: top center;
     text-align: center;
     display: flex;
@@ -21,8 +20,37 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; 
+    /* background: url('images/AMWosh_Cover_Photo.jpg') no-repeat center center fixed; */
+    background-size: cover;
 }
-
+.home-page {
+    background: url('images/AMWosh_Cover_Photo.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.about-page {
+    background-color: #faf2f3;
+    background-size: cover;
+}
+.program-page {
+    background-color: #f8d7da;
+    background-size: cover;
+}
+.blog-page {
+    background-color: #f8d7da;
+    background-size: cover;
+}
+.video-page {
+    background-color: #f8d7da;
+    background-size: cover;
+}
+.sustain-btn {
+    background: none; 
+    color: #0d3b1e; /* Keeps the text color */
+    padding: 8px 20px;
+    /* border: 2px solid #0d3b1e; Add a border around the button */
+    /* border-radius: 5px; */
+    margin-right: 20px; /* Space the button from the right side */
+}
 /* Header */
 header {
     position: fixed;
@@ -180,8 +208,26 @@ main {
     display: flex;
     align-items: center;
 }
-
-
+.about-container {
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Adds space between the image and paragraph */
+    gap: 20px; /* Adds spacing between the image and paragraph */
+    padding: 20px;
+}
+.about-container img {
+    max-width: 100%; /* Prevent the image from overflowing */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 0 auto; 
+}
+.about-container p {
+    max-width: 50%; /* Restrict the paragraph width */
+    font-size: 16px;
+    line-height: 1.5; /* Improves readability */
+    text-align: justify; /* Optional: Justifies the text */
+    color: #333; /* Text color */
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -256,5 +302,18 @@ main {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    .about-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-container img {
+        max-width: 80%; /* Adjust image size for smaller screens */
+    }
+
+    .about-container p {
+        max-width: 90%; /* Adjust paragraph width */
     }
 }
