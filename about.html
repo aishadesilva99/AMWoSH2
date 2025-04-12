@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="about-page">
+
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/AMWoSH_Logo.jpg" alt="Logo">
+                <img src="images/AMWoSH_Logo.jpg" alt="AMWoSH Logo">
             </div>
             <div class="hamburger-menu" onclick="toggleMenu()">
                 <div></div>
@@ -30,44 +31,58 @@
     </header>    
 
     <main class="about-container">
-        <section class="about_background">
-            <div class="about-container">
-                <img src="images/about1.jpg" alt="About 1">
-                <h2>Our Mission</h2>
-                <p>Empowering Muslim women through spirituality, education, and community-driven initiatives to create a positive impact on society.</p>
+        <section class="about-background">
+            <div class="image-container">
+                <img src="images/about1.jpg" alt="About Image" class="about-image">
+                <div class="about-title">About</div>
             </div>
-            <div class="mission">
-                <h2>Our Mission</h2>
-                <p>AMWoSH aims to provide a space for Muslim Women to deepen their spiritual journey by nurturing sisterhood, serving the community, and supporting women in achieving their full potential through learning and shared purpose, with a focus on Islam, Women, and Peace.</p>
-            </div>
-            <div class="vision">
-                <h2>Our Vision</h2>
-                <p>AMWoSH envisions a sisterhood that cultivates the beauty of Islamic spirituality, embodies merciful love rooted in the Sunnah, and carries this mercy to inspire humanity through mawaddah.</p>
-            </div>
-        </section>
-        
+            <section class="mission">
+                <img src="images/about7.jpg" class="mission-image" alt="Mission Image">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>
+                        AMWoSH aims to provide a space for Muslim Women to deepen their spiritual journey by nurturing sisterhood, 
+                        serving the community, and supporting women in achieving their full potential through learning and shared purpose, 
+                        with a focus on Islam, Women, and Peace.
+                    </p>
+                </div>
+            </section>
+            <section class="vision">
+                <img src="images/about2.jpg" alt="Vision Image">
+                <div class="vision-text">
+                    <h2>Our Vision</h2>
+                    <p>
+                        AMWoSH envisions a world where Muslim women are empowered to embrace their faith, 
+                        contribute meaningfully to society, and build strong bonds of sisterhood. 
+                        Through education, service, and unity, we strive to create a nurturing environment 
+                        that fosters growth and understanding.
+                    </p>
+                </div>
+            </section>
+            
     </main>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="social-icons">
-                <a href="https://www.facebook.com/amwoshofficial/"><i class="fab fa-facebook"></i></a>
-                <a href="https://x.com/amwoshofficial"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/amwoshofficial/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/amwoshofficial"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@amwoshofficial"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.spotify.com/amwoshofficial"><i class="fab fa-spotify"></i></a>
-                <a href="https://www.linkedin.com/company/amwoshofficial/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/amwoshofficial/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/amwoshofficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/amwoshofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/amwoshofficial" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@amwoshofficial" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://open.spotify.com/user/amwoshofficial" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.linkedin.com/company/amwoshofficial/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
             <p>© 2025 Alliance of Muslim Women in Spirituality and Humanity.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
     <script>
         function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
         }
     </script>
+
 </body>
 </html>
